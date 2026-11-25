@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff4f1">
+  <title>A Little Gift For You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="screen welcome-screen" id="welcomeScreen">
+      <div class="eyebrow">A LITTLE SOMETHING FOR YOU</div>
+      <h1>Hey, you. <span>♡</span></h1>
+      <p class="intro">I made something small, but it's filled with a lot of love.</p>
+      <button class="envelope" id="openGift" aria-label="Open your gift">
+        <span class="letter">♡</span>
+        <span class="flap"></span>
+      </button>
+      <p class="tap-hint">Tap the envelope to open</p>
+    </section>
+
+    <section class="screen gift-screen hidden" id="giftScreen">
+      <div class="eyebrow">JUST FOR YOU</div>
+      <h1>A little reminder <span>♡</span></h1>
+      <p class="message" id="mainMessage">
+        No matter how ordinary a day feels, I hope you remember how special you are.
+      </p>
+
+      <div class="photo-frame">
+        <!-- Replace photo1.jpg with your own picture -->
+        <img src="PICs/memo.jpg" alt="A special memory"
+             onerror="this.style.display='none'; this.parentElement.classList.add('no-photo');">
+        <span class="photo-placeholder">Your favourite memory goes here ♡</span>
+      </div>
+
+      <div class="controls">
+        <button class="primary-button" id="voiceOne">▶ Play a little message</button>
+        <button class="secondary-button" id="nextMessage">One more thing...</button>
+      </div>
+
+      <p class="audio-status" id="audioStatus" aria-live="polite">Your surprise is waiting.</p>
+
+      <div class="music-bar">
+        <span>♪ A soundtrack for this moment</span>
+        <button id="musicToggle" class="music-button" aria-pressed="false">Play music</button>
+      </div>
+
+      <button class="text-button" id="finalSurprise">Open the final surprise ♡</button>
+    </section>
+
+    <section class="screen final-screen hidden" id="finalScreen">
+      <div class="sparkle">✦</div>
+      <div class="eyebrow">ONE LAST THING</div>
+      <h1>You make life<br> a little brighter.</h1>
+      <p class="message">Thank you for being you. I hope this made you smile. ♡</p>
+      <button class="secondary-button" id="backToGift">Read it again</button>
+    </section>
+  </main>
+
+  <audio id="backgroundMusic" src="MP3/" loop preload="none"></audio>
+  <audio id="voiceAudio" preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
